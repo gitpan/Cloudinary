@@ -1,0 +1,32 @@
+Revision history for Cloudinary
+
+0.10     Sun May 20 16:04:13 2012
+       * Split base functionality to Cloudinary.pm
+
+0.0401   Sun May 20 14:52:56 2012
+       * Forgot to test for "data-src" when creating cloudinary_js_image()
+
+0.04     Sun May 20 12:30:20 2012
+       * Add cloudinary_image() mojolicious helper
+       * Add cloudinary_js_image() mojolicious helper
+       * Add support for both short and long options to methods that need to
+         shorten or expand w/width, h/height and friends:
+         a => 'angle', b => 'background', c => 'crop', d => 'default_image',
+         e => 'effect', f => 'fetch_format', g => 'gravity', h => 'height',
+         l => 'overlay', p => 'prefix', q => 'quality', r => 'radius',
+         t => 'named_transformation', w => 'width', x => 'x', y => 'y',
+
+0.03     Fri Apr 13 18:18:55 2012
+       * Add public support for "resource_type"
+       * Add response structures to documentation
+
+0.02     Fri Apr  6 10:15:10 2012
+       * Add destroy(), which deletes remote resources
+       * Fix adding "type" parameter when calculating "signature"
+       * Fix Use of uninitialized value in string eq at Cloudinary.pm line 355.
+       * Change api_url() and public_cdn() to private attributes, after
+         receiving feedback from cloudinary.
+
+0.01     Sat Mar 31 20:49:21 2012
+       * Can upload images
+       * Generage url from public_id
