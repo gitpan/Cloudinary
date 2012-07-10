@@ -27,4 +27,4 @@ resources:
   homepage: http://search.cpan.org/dist/Cloudinary
   license: http://dev.perl.org/licenses/
   repository: git://github.com/jhthorsen/cloudinary
-version: 0.1101
+version: 0.1102

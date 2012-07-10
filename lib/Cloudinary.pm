@@ -6,7 +6,7 @@ Cloudinary - Talk with cloudinary.com
 
 =head1 VERSION
 
-0.1101
+0.1102
 
 =head1 DESCRIPTION
 
@@ -61,6 +61,27 @@ the examples below work the same:
     $cloudinary->url_for('my-uploaded-image.jpg', { h => 50, w => 50 });
     $cloudinary->url_for('myrawid', { resource_type => 'raw' });
 
+=head2 Aliases
+
+This module provides alias for the Cloudinary transformations:
+
+    a => 'angle',
+    b => 'background',
+    c => 'crop',
+    d => 'default_image',
+    e => 'effect',
+    f => 'fetch_format',
+    g => 'gravity',
+    h => 'height',
+    l => 'overlay',
+    p => 'prefix',
+    q => 'quality',
+    r => 'radius',
+    t => 'named_transformation',
+    w => 'width',
+    x => 'x',
+    y => 'y',
+
 =cut
 
 use Mojo::Base -base;
@@ -69,7 +90,7 @@ use Mojo::UserAgent;
 use Mojo::Util qw/ sha1_sum url_escape /;
 use Scalar::Util 'weaken';
 
-our $VERSION = eval '0.1101';
+our $VERSION = eval '0.1102';
 our(%SHORTER, %LONGER);
 my @SIGNATURE_KEYS = qw/ callback eager format public_id tags timestamp transformation type /;
 
@@ -350,7 +371,11 @@ sub url_for {
         $self->cloud_name,
         $args->{'resource_type'} || 'image',
         $args->{'type'} || 'upload',
-        join(',', map { ($SHORTER{$_} || $_) .'_' .$args->{$_} } sort keys %$args),
+        join(',',
+            map { ($SHORTER{$_} || $_) .'_' .$args->{$_} }
+            grep { $_ ne 'resource_type' and $_ ne 'type' }
+            sort keys %$args
+        ),
         "$public_id.$format",
     );
 
