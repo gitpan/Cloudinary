@@ -6,10 +6,10 @@ build_requires:
   ExtUtils::MakeMaker: 6.36
   Test::More: 0.9
 configure_requires:
-  ExtUtils::MakeMaker: 6.36
+  ExtUtils::MakeMaker: 0
 distribution_type: module
-dynamic_config: 1
-generated_by: 'Module::Install version 1.06'
+dynamic_config: 0
+generated_by: 'ExtUtils::MakeMaker version 6.57_05'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -17,14 +17,9 @@ meta-spec:
 name: Cloudinary
 no_index:
   directory:
-    - inc
     - t
+    - inc
 requires:
   Mojolicious: 2.65
   base: 2.1
-resources:
-  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Cloudinary
-  homepage: http://search.cpan.org/dist/Cloudinary
-  license: http://dev.perl.org/licenses/
-  repository: git://github.com/jhthorsen/cloudinary
 version: 0.13
