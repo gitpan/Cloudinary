@@ -24,4 +24,4 @@ resources:
   homepage: https://metacpan.org/release/Cloudinary
   license: http://dev.perl.org/licenses/
   repository: https://github.com/jhthorsen/cloudinary.git
-version: 0.1301
+version: 0.14
